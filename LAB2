@@ -4,7 +4,7 @@ void setup(){
   background(#030202);
 }
 void draw(){
-  background(#030202); //<>//
+  background(#030202);
   stroke(#FFFFFF);
   strokeWeight(10);
   noFill();
@@ -16,9 +16,11 @@ void draw(){
   colorMode(RGB);
   fill(mouseX,mouseY,width-mouseX,128);
   noStroke();
-  circle(mouseX,mouseY,width-mouseX);
-  //cirlce();
+  circle(height-mouseX,width-mouseY,mouseX);
+  circle(width-mouseX,height-mouseY,mouseY);
+  //ircle();
+  fill(mouseY,mouseX,height-mouseX,128);
+  circle(height-mouseY,width-mouseX,mouseX);
+  circle(height-mouseY,width-mouseX,mouseY);
   //circle();
-  //circle();
-  
 }
