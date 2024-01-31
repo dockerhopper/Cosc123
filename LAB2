@@ -1,12 +1,4 @@
-void setup(){
-  colorMode(HSB);
-  size(400,400);
-  background(#030202);
-}
-void draw(){
-  background(#030202);
-  stroke(#FFFFFF);
-  strokeWeight(10);
+ strokeWeight(10);
   noFill();
   bezier(25,25,width-mouseX,height-mouseY,mouseX,mouseY,375,375);
   bezier(375,25,width-mouseX, height-mouseY, mouseX, mouseY,25,375);
@@ -16,11 +8,12 @@ void draw(){
   colorMode(RGB);
   fill(mouseX,mouseY,width-mouseX,128);
   noStroke();
-  circle(height-mouseX,width-mouseY,mouseX);
-  circle(width-mouseX,height-mouseY,mouseY);
-  //ircle();
-  fill(mouseY,mouseX,height-mouseX,128);
-  circle(height-mouseY,width-mouseX,mouseX);
-  circle(height-mouseY,width-mouseX,mouseY);
+  circle(mouseX,mouseY,mouseX);
+  circle(width-mouseX,width-mouseY,mouseX);
+  
+  circle(mouseX,height-mouseY,mouseX);
+  circle(width-mouseX,mouseY,mouseX);
+  //circle(mouseX,mouseX,mouseX);
+  //circle(mouseY,mouseY,mouseX);
   //circle();
 }
