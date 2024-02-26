@@ -1,0 +1,91 @@
+final int W=64, H=64;         //tile width and height
+PImage bk, player, platform1, platform2;
+PImage leftDoor, door, rightDoor, leftBuild, rightBuild, flag, rightBar;
+PImage middleBar, leftBar, weirdTopLeft, weirdTopRight;
+PImage topFlag, middleFlag, bottomFlag, roofLeft, roof, roofRight, pole, poleTop;
+
+void setup(){
+  size(512,512);
+  bk = loadImage("background_0.png");      // 512 x 512
+  player = loadImage("player_0.png");      // 64 x 64
+  platform1 = loadImage("platform_13.png");// 64 x 64
+  platform2 = loadImage("platform_14.png");// 64 x 64
+  
+  leftDoor = loadImage("medievalTile_218.png");
+  door = loadImage("medievalTile_219.png");
+  rightDoor = loadImage("medievalTile_220.png");
+  
+  leftBuild = loadImage("medievalTile_066.png");
+  rightBuild = loadImage("medievalTile_068.png");
+  
+  rightBar = loadImage("medievalTile_151.png");
+  middleBar = loadImage("medievalTile_150.png");
+  leftBar = loadImage("medievalTile_149.png");
+ 
+  flag = loadImage("medievalTile_217.png");
+  
+  weirdTopLeft = loadImage("medievalTile_042.png");
+  weirdTopRight= loadImage("medievalTile_044.png");
+  
+  bottomFlag = loadImage("medievalTile_141.png");
+  middleFlag = loadImage("medievalTile_117.png");
+  topFlag = loadImage("medievalTile_093.png");
+  
+  roofLeft = loadImage("medievalTile_266.png");
+  roof = loadImage("medievalTile_263.png");
+  roofRight = loadImage("medievalTile_267.png");
+  
+  pole = loadImage("medievalTile_211.png");
+  poleTop = loadImage("medievalTile_187.png");
+}
+
+void draw(){
+  //Castle
+  background(bk);
+  image(leftDoor,84,6*H-6);
+  image(door, 84+70,6*H-6);
+  image(rightDoor, 84+140,6*H-6);
+  
+  image(leftBuild, 14, 6*H-6);
+  image(rightBuild, 84+210, 6*H-6);
+  
+  image(weirdTopLeft, 14, 5*H-12);
+  image(weirdTopRight, 84+210,5*H-12);
+  
+  image(leftBar, 84, 5*H-12);
+  image(middleBar, 84+70, 5*H-12);
+  image(rightBar,84+140, 5*H-12);
+  
+  image(bottomFlag,84+70,4*H-18);
+  image(middleFlag,84+70, 3*H-24);
+  image(topFlag, 84+70, 2*H-30);
+  
+  image(pole, 84,H-28);
+  image(poleTop, 84, H-75);
+  
+  image(roofLeft, 84, H-21);
+  image(roof, 84+70, H-21);
+  image(roofRight, 84+140, H-21);
+  
+  image(leftBuild, 84, 4*H-18);
+  image(leftBuild, 84, 3*H-24);
+  image(rightBuild, 84+140, 4*H-18);
+  image(rightBuild, 84+140, 3*H-24);
+  image(weirdTopLeft, 84, 2*H-30);
+  image(weirdTopRight, 84+140, 2*H-30);
+  
+  image(flag, -12, 4*H-18);
+  image(flag,84+180, 4*H-18);
+  
+  
+  // draw the player image at (mouseX, 6*H) - i.e. your player should move with mouseX 
+  image(player,mouseX-30,6*H);
+  // draw the platform at y = 7 * H
+  image(platform1,0,7*H);
+  image(platform1,64,7*H);
+  image(platform1,128,7*H);
+  image(platform1,128+64,7*H);
+  image(platform1,128+64*2,7*H);
+  image(platform1,128+64*3,7*H);
+  image(platform2,128+64*4,7*H);
+}
